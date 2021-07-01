@@ -118,27 +118,31 @@ VALUES(2, 4, 1, 1);
 INSERT INTO venta_ulleres(client_id, ulleres_id, empleat_id, quantitat)
 VALUES(2, 4, 1, 2);
 
+-- Descomenta les consultes
+
 -- Llista el total de factures d'un client en un període determinat
-SELECT nom, cognom, marca, preu * quantitat AS 'preu total' 
-FROM clients 
-JOIN venta_ulleres 
-ON clients.client_id = venta_ulleres.client_id 
-JOIN ulleres 
-ON venta_ulleres.ulleres_id = ulleres.ulleres_id 
-WHERE clients.client_id = 2;
+
+-- SELECT nom, cognom, marca, preu * quantitat AS 'preu total' 
+-- FROM clients 
+-- JOIN venta_ulleres 
+-- ON clients.client_id = venta_ulleres.client_id 
+-- JOIN ulleres 
+-- ON venta_ulleres.ulleres_id = ulleres.ulleres_id 
+-- WHERE clients.client_id = 2;
+
 -- Llista els diferents models d'ulleres que ha venut un empleat durant un any
-SELECT nom, marca FROM empleat
-JOIN venta_ulleres 
-ON empleat.empleat_id = venta_ulleres.empleat_id
-JOIN ulleres 
-ON venta_ulleres.ulleres_id = ulleres.ulleres_id 
-WHERE empleat.empleat_id = 1;
+
+-- SELECT nom, marca FROM empleat
+-- JOIN venta_ulleres 
+-- ON empleat.empleat_id = venta_ulleres.empleat_id
+-- JOIN ulleres 
+-- ON venta_ulleres.ulleres_id = ulleres.ulleres_id 
+-- WHERE empleat.empleat_id = 1;
+
 -- Llista els diferents proveïdors que han subministrat ulleres venudes amb èxit per l'òptica
-SELECT DISTINCT nom FROM proveidor
-JOIN ulleres
-ON proveidor.proveidor_id = ulleres.proveidor_id
-JOIN venta_ulleres
-ON venta_ulleres.ulleres_id = ulleres.ulleres_id;
 
-
-
+-- SELECT DISTINCT nom FROM proveidor
+-- JOIN ulleres
+-- ON proveidor.proveidor_id = ulleres.proveidor_id
+-- JOIN venta_ulleres
+-- ON venta_ulleres.ulleres_id = ulleres.ulleres_id;
